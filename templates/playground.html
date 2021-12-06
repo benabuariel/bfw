@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+                body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+            .bg-image {
+            background-image: url("/static/clouds.jpg");
+            background-color: #cccccc;
+            height: 1000px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            }
+            .doinne{
+           color: white;
+          border: 1px #008080;
+          margin: 1px;
+          padding: 1px;
+          line-height: 1;
+          vertical-align: baseline;
+            }
+            .bg-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            }
+                    .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          color: white;
+          text-align: center;
+        }
+    </style>
+</head>
+
+        <body>
+        <div class="bg-image">
+        {% for (day,max_temp),(_,min_temp),(_,humidity) in ZippedItems %}
+        <div class="doinne">
+
+            <center><p> {% if day == 0 %}
+            <h1>Today </h1><br>
+        {% else %}
+            <h1>Day {{day}} </h1><br>
+        {% endif %}
+        {{max_temp}}&#8451 to {{min_temp}}&#8451, humidity {{humidity}}%
+        {% endfor %}
+
+    <br>
+        </p></center>
+                </div>
+            </div>
+
+        <div class="footer">
+          <p>Created By Gosha AKA Gosheno, Ariel AKA Afrojew, Dana AKA Don Konte, Omri AKA OSDistroyers</p>
+        </div>
+</body></html>
+
+
+

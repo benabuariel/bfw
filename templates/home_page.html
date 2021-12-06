@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>WELCOME to BestFW</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+                body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .bg-image {
+            background-image: url("/static/clouds.jpg");
+            background-color: #cccccc;
+            height: 1000px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            }
+
+            .bg-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            }
+                    .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          color: white;
+          text-align: center;
+        }
+    </style>
+    </head>
+        <body>
+            <div class="bg-image">
+                <div class="bg-text">
+                    <h1 style="font-size:50px">Welcome to BestFWeather</h1>
+            <center><p>We hope you will have a nice FWeather today.</p></center>
+
+                <center><p>{{ msg }}</p></center>
+            <center>
+            <form method="POST">
+                Enter city or country name:
+                <input name="text" maxlength="200" placeholder="write a city or country">
+                <br>
+                <input name="date" maxlength="20" placeholder="dd/mm/yyyy">
+                <br>
+                <input type="submit" value="GO!">
+                <br>
+            </form></center>
+                </div>
+            </div>
+            <div class="footer">
+          <p>Created By Gosha AKA Gosheno, Ariel AKA Afrojew, Dana AKA Don Konte, Omri AKA OSDistroyers</p>
+            </div>
+        </body>
+</html>

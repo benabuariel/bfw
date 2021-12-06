@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Location Select</title>
+    </head>
+<style>
+                body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .bg-image {
+            background-image: url("/static/city2.jpg");
+            background-color: #cccccc;
+            height: 1000px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            }
+
+            .bg-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            }
+                    .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          color: white;
+          text-align: center;
+        }
+    </style>
+    <body>
+    <div class="bg-image">
+                <div class="bg-text">
+        <form method="POST">
+        <p> Please choose the right location from list</p>
+            {% for i,loc in loc_list %}
+                <input type="radio" name="options" id={{i}} value={{i}}> {{loc}}
+            <br>
+            {% endfor %}{{i}}
+            <input type="submit" value="GO!">
+        <br>
+        </form>
+                             </div>
+            </div>
+    </body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather forcast for 7 days</title>
+</head>
+<body>
+    Country:{{ Country }}
+    <br>
+    City:{{ City }}
+    <br>
+    State:{{ State }}
+    <br>
+    District:{{ District }}
+    <br>
+    {% for (day,max_temp),(_,min_temp),(_,humidity) in ZippedItems %}
+        {% if day == 0 %}
+            today
+        {% else %}
+            in {{day}} days
+        {% endif %}
+        temperature in range {{max_temp}}&#8451 to {{min_temp}}&#8451, humidity {{humidity}}%
+    <br>
+    {% endfor %}
+</body>
+</html>
