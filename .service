@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn instance to serve bfw
+After=network.target
+[Service]
+User=devops
+WorkingDirectory=/home/{{ ansible_ssh_user }}/{{ app_name }}
+Environment="PATH=/home/{{ ansible_ssh_user }}/{{ app_name }}/venv/bin"
+ExecStart=/home/devops/bfw/venv/bin/gunicorn -b localhost:8000 main:app
+Restart=always
+[Install]
+WantedBy=multi-user.target
